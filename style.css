@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#Canvas {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+}
+
+.flag {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    position: relative;
+    margin: 50px auto;
+    z-index: 999;
+}
+
+.flag .red, .flag .white {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.flag .red {
+    background-color: red;
+}
+
+.flag .white {
+    background-color: white;
+}
+
+.text-content h4 {
+    position: relative;
+    font-size: 1.6rem;
+    color: #ff0000;
+    animation: color-change 3s infinite;
+    z-index: 999;
+}
+
+@keyframes color-change {
+    0%, 100% { color: #ff0000; }
+    25% { color: #ffffff; }
+    50% { color: #ffcc00; }
+    75% { color: #ffffff; }
+}
+
+.text {
+    stroke: #fff;
+    fill: transparent;
+    stroke-dasharray: 3000;
+    animation: drawing 18s linear infinite;
+    z-index: 999;
+}
+
+@keyframes drawing {
+    0% {
+        stroke-dashoffset: 3000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
